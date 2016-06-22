@@ -63,8 +63,7 @@ gulp.task('concat:css', ['sass'], function () {
             './' + BOWER_COMPONENTS + '/iUS.UX/fonts/icomoon/style.css',
             './' + BOWER_COMPONENTS + '/iUS.UX/css/external/jquery-ui.css',
             './' + BOWER_COMPONENTS + '/iUS.UX/css/external/jquery-ui.theme.css',
-            './wwwroot/app/css/ius.css',
-            './wwwroot/app/css/benefits.css'
+            './wwwroot/app/css/ius.css'
     ])
         .pipe(concat(OUTPUT_FILE_NAME + '.css'))
         .pipe(gulp.dest('./wwwroot/css/'));
@@ -78,14 +77,7 @@ gulp.task('uglify:js', ['concat:js'], function () {
         .pipe(gulp.dest('./wwwroot/js/'));
 });
 
-gulp.task('sass', ['sass:benefits', 'sass:ius']);
-
-gulp.task('sass:benefits', function () {
-    return gulp.src('./' + BOWER_COMPONENTS + '/Benefits.UX/css/site.scss')
-        .pipe(sass())
-        .pipe(rename("benefits.css"))
-        .pipe(gulp.dest('./wwwroot/app/css'));
-});
+gulp.task('sass', ['sass:ius']);
 
 gulp.task('sass:ius', function () {
     return gulp.src('./' + BOWER_COMPONENTS + '/iUs.UX/scss/ius.scss')
@@ -94,7 +86,7 @@ gulp.task('sass:ius', function () {
         .pipe(gulp.dest('./wwwroot/app/css'));
 });
 
-gulp.task('typescript', ['typescript:ius', 'typescript:benefits']);
+gulp.task('typescript', ['typescript:ius']);
 
 gulp.task('typescript:ius', function () {
     return gulp.src(['./' + BOWER_COMPONENTS + '/iUS.UX/typescript/**/*.ts'])
@@ -102,14 +94,6 @@ gulp.task('typescript:ius', function () {
             noExternalResolve: false
         }))
         .pipe(gulp.dest('./wwwroot/app/iUS.UX'));
-});
-
-gulp.task('typescript:benefits', function () {
-    return gulp.src(['./' + BOWER_COMPONENTS + '/Benefits.UX/js/**/*.ts'])
-        .pipe(ts({
-            noExternalResolve: false
-        }))
-        .pipe(gulp.dest('./wwwroot/app/Benefits.UX'));
 });
 
 gulp.task('copyfonts', function () {
@@ -123,7 +107,7 @@ gulp.task('copyimages', function () {
 });
 
 gulp.task('appsettings', function() {
-        return gulp.src(['./' + BOWER_COMPONENTS + '/Benefits.AppSettings/*.json'])
+        return gulp.src(['./' + BOWER_COMPONENTS + '/iUS.AppSettings/*.json'])
             .pipe(debug())
             .pipe(gulp.dest('./Configuration/'));
 });
