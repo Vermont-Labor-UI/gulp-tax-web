@@ -10,4 +10,4 @@ var OUTPUT_FILE_NAME = global.FileName || "site";
 
 var BOWER_COMPONENTS = global.BowerComponents || "wwwroot/lib";
 
-gulp.task("build", ['sass:ius', 'typescript:ius', 'concat', 'uglify:js','copyfonts', 'copyimages']);
+gulp.task("build", ['sass', 'typescript', 'concat', 'uglify:js','copyfonts', 'copyimages']);
