@@ -1,7 +1,7 @@
 /// <binding />
 "use strict";
 var gulp = require("gulp");
-var fs = require("fs");
+var fileExists = require('file-exists');
 
 
 if(fileExists("gulp-ius-web/gulpfile.js"))
