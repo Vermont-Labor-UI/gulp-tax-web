@@ -1,6 +1,7 @@
 /// <binding />
 "use strict";
 var gulp = require("gulp");
+var fs = require("fs");
 
 fs.stat('gulp-ius-web', function(err,stat){
     if(err == null)
