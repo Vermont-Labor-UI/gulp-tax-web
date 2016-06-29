@@ -3,26 +3,20 @@
 var gulp = require("gulp");
 var fs = require("fs");
 
-fs.stat('gulp-ius-web', function(err,stat){
-    if(err == null)
-        require('require-dir')('gulp-ius-web');
-});
 
-fs.stat('node_modules/gulp-ius-web', function(err,stat){
-    if(err == null)
-        require('require-dir')('node_modules/gulp-ius-web');
-});
+if(fileExists("gulp-ius-web/gulpfile.js"))
+    require('require-dir')('gulp-ius-web');
+else if (fileExists("node_modules/gulp-ius-web/gulpfile.js"))
+    require('require-dir')('node_modules/gulp-ius-web');
+else
+    console.log("Error loading gulp-ius-web package");
 
-fs.stat('gulp-appsettings', function(err,stat){
-    if(err == null)
-        require('require-dir')('gulp-appsettings');
-});
-
-fs.stat('node_modules/gulp-appsettings', function(err,stat){
-    if(err == null)
-        require('require-dir')('node_modules/gulp-appsettings');
-});
-
+if(fileExists("gulp-appsettings/gulpfile.js"))
+    require('require-dir')('gulp-appsettings');
+else if(fileExists("node_modules/gulp-appsettings/gulpfile.js"))
+    require('require-dir')('node_modules/gulp-appsettings');
+else
+    console.log("Error loading gulp-appsettings package");  
 
 // Set the global.Filename to override this
 var OUTPUT_FILE_NAME = global.FileName || "site";
