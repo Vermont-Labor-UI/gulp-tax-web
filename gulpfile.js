@@ -1,22 +1,14 @@
 /// <binding />
 "use strict";
 var gulp = require("gulp");
-var fileExists = require('file-exists');
+var requireDir = require('require-dir');
+var path = require('path');
 
+var iusPath = path.join(process.cwd(), 'node_modules/gulp-ius-web');
+var ius = requireDir(iusPath);
 
-if(fileExists("gulp-ius-web/gulpfile.js"))
-    require('require-dir')('gulp-ius-web');
-else if (fileExists("node_modules/gulp-ius-web/gulpfile.js"))
-    require('require-dir')('node_modules/gulp-ius-web');
-else
-    console.log("Error loading gulp-ius-web package");
-
-if(fileExists("gulp-appsettings/gulpfile.js"))
-    require('require-dir')('gulp-appsettings');
-else if(fileExists("node_modules/gulp-appsettings/gulpfile.js"))
-    require('require-dir')('node_modules/gulp-appsettings');
-else
-    console.log("Error loading gulp-appsettings package");  
+var appSettingsPath = path.join(process.cwd(), 'node_modules/gulp-appsettings');
+var appSettings = requireDir(appSettingsPath);
 
 // Set the global.Filename to override this
 var OUTPUT_FILE_NAME = global.FileName || "site";
