@@ -1,6 +1,9 @@
 
 #!/bin/sh
 
+echo 'Running Gulp Clean'
+gulp clean
+
 echo 'Creating javascript folder'
 mkdir -p wwwroot/lib/jquery/dist/
 
@@ -20,24 +23,12 @@ gulp build
 
 echo "asserting javascript files were created"
 if [ ! -f 'wwwroot/js/site.js' ]; then 
-	echo "site.js not created" 
+	echo "Site.js not created" 
 	exit 1 
 fi
 
 echo "asserting css files were created"
 if [ ! -f 'wwwroot/css/site.css' ]; then 
-	echo "site.css not created" 
-	exit 1 
-fi
-
-echo "asserting javascript files were minified"
-if [ ! -f 'wwwroot/js/site.min.js' ]; then 
-	echo "site.min.js not created" 
-	exit 1 
-fi
-
-echo "asserting css files were minified"
-if [ ! -f 'wwwroot/css/site.min.css' ]; then 
-	echo "site.min.css not created" 
+	echo "Site.css not created" 
 	exit 1 
 fi
