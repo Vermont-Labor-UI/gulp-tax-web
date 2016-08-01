@@ -10,8 +10,8 @@
   "dependencies": {
     "file-exists": "^1.0.0",
     "gulp": "^3.9.1",
-    "gulp-appsettings": "github:ius-gov/gulp-appsettings",
-    "gulp-ius-web": "github:ius-gov/gulp-ius-web",
+    "gulp-appsettings": "github:ius-gov/gulp-appsettings#1.0.2",
+    "gulp-ius-web": "github:ius-gov/gulp-ius-web#2.0.0",
     "require-dir": "^0.3.0"
   }
 }
