@@ -6,12 +6,12 @@
     "url": "git://github.com/ius-gov/gulp-tax-web.git"
   },
   "license": "Apache-2.0",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {
     "file-exists": "^1.0.0",
     "gulp": "^3.9.1",
-    "gulp-appsettings": "github:ius-gov/gulp-appsettings#1.0.2",
-    "gulp-ius-web": "github:ius-gov/gulp-ius-web#2.0.0",
+    "gulp-appsettings": "github:ius-gov/gulp-appsettings#1.0.3",
+    "gulp-ius-web": "github:ius-gov/gulp-ius-web#2.2.0",
     "require-dir": "^0.3.0"
   }
 }
