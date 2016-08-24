@@ -6,7 +6,7 @@
     "url": "git://github.com/ius-gov/gulp-tax-web.git"
   },
   "license": "Apache-2.0",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {
     "file-exists": "^1.0.0",
     "gulp": "^3.9.1",
